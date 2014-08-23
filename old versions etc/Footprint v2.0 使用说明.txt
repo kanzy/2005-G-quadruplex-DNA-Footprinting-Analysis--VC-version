@@ -1,0 +1,25 @@
+Footprint v2.0 使用说明
+
+
+
+首先在左下方的实验模式（Choose Mode）做选择，即样品DNA为几个repeat的分子；
+
+然后相应的在左上方的实验数据输入区（Input Exp Data）中依次输入各Bands的值，BandsX（X＝1－6for R7；1－5 for R6；1－4 for R5；1－3 for R4）指的是footpint gel上呈现的从底端开始数第X组DNA三联条带，由样品DNA分子5'端第X个repeat的三个G碱基处经footprint实验断裂过程产生，BandsX的值的大小即为该三联条带的曝光强度积分之和；
+Ref Lane指的是未经Footprint处理的对照泳道中DNA带的曝光强度积分；
+对照泳道中的DNA上样量可以不等于其它正常泳道，在这种情况下，在Ref Ratio中填入（对照泳道上样量/正常泳道上样量）的值，该项默认值为1；
+
+下一步在右上方区域中确定计算所用的初始值，可以点Get Default按钮自动得到（其算法见Qs726View.cpp源文件中的函数void CQs726View::OnButton1()），或者在相应空白处手工任意输入（应注意各自的有效范围）；
+
+最后在右下方点Calculate按钮，即得到计算结果;
+
+附各项代表的意义是：
+p－－ the probability for a G triplet to be attacked during the DMS treatment；
+R－－ the probability for (TTAGGG)4 to be in the relaxed form；
+Qi (i=1－4for R7；1－3 for R6；1－2 for R5；1 for R4) －－ the probability of forming a quadruplex with i-1 repeats at the 3' end;
+
+
+
+
+
+
+
